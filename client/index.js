@@ -4,15 +4,15 @@ stopRecording.addEventListener("click",stopRec);
 function stopRec()
 {
   let text = document.getElementById('textbox');
-  let value =  text.value;
   const http = new XMLHttpRequest();
-  const url = 'http://localhost:4600/mood';
-  http.open("POST",url,true);
+  const url = 'http://localhost:4600';
+  http.open('POST',url,true);
   http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  http.send(text.value);
-  http.onreadystatechange = (e) =>{
+  http.setRequestHeader('DATA', text.value);
+  http.onload = (e) =>{
     console.log(http.responseText);
   };
+  http.send();
 }
 var SpeechRecognition = window.webkitSpeechRecognition;
 

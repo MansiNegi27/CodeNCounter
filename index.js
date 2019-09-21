@@ -1,6 +1,5 @@
 const express=require('express');
 const router=express.Router();
-
 // function call(req, res,text) {
 //     const spawn = require("child_process").spawn;
 //     const process = spawn('python',["./mood_predictor.py",text] );
@@ -12,12 +11,12 @@ router.get('/',(req,res)=>{
   res.render('/client/index');
 });
 router.post('/',(req,res)=>{
-  text = req.body.textbox;
+  text = req.headers.data;
   const spawn = require("child_process").spawn;
   const process = spawn('python',["./mood_predictor.py",text] );
   process.stdout.on('data', function(data) {
-      mood = data.toString();
+    const mood = data.toString();
+     res.json({"data" : mood});
   });
-  res.render('/client/mood',{user:mood});
 });
 module.exports=router;
