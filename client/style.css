@@ -1,0 +1,122 @@
+body {
+	width: 90vw;
+	height: 90vh;
+	color: #fff;
+  margin : 0;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradientBG 15s ease infinite;
+}
+
+.recommend{
+	margin-top: 5vh;
+	margin-left: 35vw;
+}
+
+.quote{
+    margin-top: 5vh;
+    margin-left: 30vw;
+}
+
+.myEmoji{
+	margin-top: 5vh;
+	margin-left: 30vw;
+	font-size: 15rem;
+}
+
+.StartStopButton {
+    margin-left: 40vw;
+    margin-top: 5vh;
+    height: 25vh;
+    width : 25vh;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.dontshow{
+  display: none;
+}
+
+
+*:focus {
+    outline: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.fa-sad-tear{
+  margin-top: 5vh;
+  margin-left: 30vw;
+}
+
+.fa-angry{
+  margin-top: 5vh;
+  margin-left: 30vw;
+}
+
+.fa-grin-beam{
+  margin-top: 5vh;
+  margin-left: 30vw;
+}
+
+textarea{
+  resize : none;
+  margin-left: 20vw;
+  margin-top: 5vh;
+  background: none;
+  border-color : black;
+  border-style: none;
+  font-family: Arial, serif;
+  padding: none;
+  font-size: 1.5rem;
+}
+
+textarea:hover{
+  background: none;
+  border-color : black;
+  border-style: none;
+}
+
+btn-group-lg>.btn, .btn-lg{
+    border-radius: 10rem;
+    border-color : white;
+    border-width: thick ;
+}
+
+.StartStopButton:hover {
+    height: 25vh;
+    width : 25vh;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: change 3s ease 1;
+    border-color : white;
+}
+
+
+@keyframes change {
+	0% {
+		transform: scale(1.1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+	transform: scale(1.3);
+	}
+}
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
