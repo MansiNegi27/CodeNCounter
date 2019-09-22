@@ -7,11 +7,14 @@ function handleRecommendations()
 {
   const tag = document.getElementById('chosenLabel').classList[0];
   const http = new XMLHttpRequest();
-  const url = 'http://localhost:4600/recommendations';
-  http.open('POST',url,true);
+  const url = 'http://localhost:4600/';
+  window.location.replace("http://localhost:4600/recommendation/"+tag+".html");
+  /*http.open('POST',url,true);
   http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  http.setRequestHeader('DATA', tag);
-  http.send();
+  http.onreadystatechange = (e) ={
+    window.location = "/recommendation/sad.html";
+  }
+  http.send();*/
 }
 
 function startRec()
