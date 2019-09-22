@@ -9,15 +9,42 @@ dontGoToQuiz.addEventListener("click",dontGoToTheQuiz);
 const form = document.getElementById('quizControl');
 const getRecommendations = document.getElementById('getRecommendations');
 
+function findScore(form)
+{
+  let finalAnswer =0;
+  for(val in form)
+  {
+    let y = val;
+    if(form[y].checked)
+    {
+      finalAnswer+=parseInt(form[y].value);
+    }
+  }
+  return finalAnswer;
+}
+
+function findLabel(finalAnswer)
+{
+  if(finalAnswer>=300)
+  return "Happy";
+  else if(finalAnswer%10 > 3)
+  return "Sad";
+  else if(finalAnswer%100 > 3)
+  return "Angry";
+  else
+  return "Indecisive";
+}
 getRecommendations.addEventListener('click',function(event){
   event.preventDefault();
   event.stopPropagation();
   //calculate values from form
-
+  const form = document.getElementsByClassName('inp');
   //save value from this;
-  //call  other functions;
-  const form = document.getElementById('quizControl');
-  form.parentNode.removeChild(form);
+  let finalAnswer = findScore(form);
+  let label = findLabel(finalAnswer)
+  //call  other functions;;
+  const formWhole = document.getElementById('quizControl');
+  formWhole.parentNode.removeChild(formWhole);
   findQuotes();
 })
 form.addEventListener('submit', function(event) {
