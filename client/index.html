@@ -12,6 +12,85 @@
 
   <body>
   <div id="chosenLabel"></div>
+  <form id="quizControl" class = "dontshow">
+  <div class="form-group">
+  <label for="title">Ques1. How do you wake up this morning?</label>
+  <div class="custom-control custom-radio">
+    <input type="radio" id="defaultUnchecked" name="defaultExampleRadios">
+    <label for="defaultUnchecked">The birds were singing, the breeze blowing in my window, it was beautiful
+    </label><br>
+    <input type="radio" id="defaultUnchecked" name="defaultExampleRadios">
+    <label for="defaultUnchecked">F*&# you</label><br>
+    <input type="radio" id="defaultUnchecked" name="defaultExampleRadios">
+    <label for="defaultUnchecked">I woke up in the worst possible way…
+    </label><br>
+  </div>
+  </div>
+    <div class="form-group">
+    <label for="title">Ques2) If someone asked you a stupid question right now….</label>
+    <div class="custom-control custom-radio">
+      <input type="radio" id="second" name="secondTwo">
+      <label for="second">Glare them down before chastising them for their ignorance</label><br>
+      <input type="radio" id="second" name="secondTwo">
+      <label for="second">Answer quickly and move on to discussing more important things like my problems</label><br>
+      <input type="radio" id="second" name="secondTwo">
+      <label for="second">Smile, chuckle and give them an answer</label><br>
+     </div>
+    </div>
+    <div class="form-group">
+    <label for="title">Ques3) Your food gets burned, you… </label>
+    <div class="custom-control custom-radio">
+      <input type="radio" id="third" name="thirdThree">
+      <label for="third">Freak out, break the dish, break the appliance you were using and sulk into the other room
+      </label><br>
+      <input type="radio" id="third" name="thirdThree">
+      <label for="third">Sit down on the floor amongst the remains and have a good sniffle
+      </label><br>
+      <input type="radio" id="third" name="thirdThree">
+      <label for="third">Raise an eyebrow, laugh at yourself, and begin remaking it.
+      </label><br>
+     </div>
+    </div>
+    <div class="form-group">
+    <label for="title">Ques4) Your cell phone loses reception, you… </label>
+    <div class="custom-control custom-radio">
+      <input type="radio" id="fifth" name="fifthFive">
+      <label for="fifth">Laugh and call the person back, then you both have a laugh about it.
+      </label><br>
+      <input type="radio" id="fifth" name="fifthFive">
+      <label for="fifth">Maybe it wasn’t the reception, maybe they just don’t want to hear your voice, you just knew everyone hated you.
+      </label><br>
+      <input type="radio" id="fifth" name="fifthFive">
+      <label for="fifth">Break the phone and get furious at the person on the other end convinced they had something to do with it.
+      </label><br>
+     </div>
+    </div>
+    <div class="form-group">
+    <label for="title">Ques5) So far today has been….</label>
+    <div class="custom-control custom-radio">
+      <input type="radio" id="sixth" name="sixthSix">
+      <label for="sixth">Wonderful, it’s a beautiful day
+      </label><br>
+      <input type="radio" id="sixth" name="sixthSix">
+      <label for="sixth">Miserable, I wish I wouldn’t have gotten out of bed </label><br>
+      <input type="radio" id="sixth" name="sixthSix">
+      <label for="sixth">What kind of question is that? I’ll kill you and eat you …
+      </label><br>
+     </div>
+    </div>
+    <button type="submit" class="btn btn-primary" id="getRecommendations">Get Recommendation</button>
+  </form>
+
+  <div class="dontshow" id ="askQuiz">
+    <div class = "row">
+    <h2>Up for a quiz ?</h2>
+  </div>
+  <div class = "row">
+    <button type="submit" class="btn btn-primary m-2 btn-lg" id="goToQuiz" >Yes !</button>
+    <button type="submit" class="btn btn-primary m-2 btn-lg" id="dontGoToQuiz" >No</button>
+  </div>
+  </div>
+
   <div id = "app">
     <div class = "row" style="margin-left:25vw;" >
         <h3>Hi, How was your day? How do you feel today?</h3>

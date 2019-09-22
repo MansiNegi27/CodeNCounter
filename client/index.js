@@ -2,6 +2,28 @@ const stopRecording = document.getElementById('stopRecording');
 stopRecording.addEventListener("click",stopRec);
 const startRecording = document.getElementById('startRecording');
 startRecording.addEventListener("click",startRec);
+const goToQuiz = document.getElementById('goToQuiz');
+goToQuiz.addEventListener("click",goToTheQuiz);
+const dontGoToQuiz = document.getElementById('dontGoToQuiz');
+dontGoToQuiz.addEventListener("click",dontGoToTheQuiz);
+const form = document.getElementById('quizControl');
+const getRecommendations = document.getElementById('getRecommendations');
+
+getRecommendations.addEventListener('click',function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  //calculate values from form
+
+  //save value from this;
+  //call  other functions;
+  const form = document.getElementById('quizControl');
+  form.parentNode.removeChild(form);
+  findQuotes();
+})
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  });
 
 function handleRecommendations()
 {
@@ -16,6 +38,7 @@ function handleRecommendations()
   }
   http.send();*/
 }
+
 
 function startRec()
 {
@@ -36,8 +59,6 @@ function showEmojis(predictedLabel,pictureQuote)
 {
   const heading = document.createElement('h3');
   const icon = document.createElement('h1');
-  const chosenLabel = document.getElementById('chosenLabel');
-  chosenLabel.classList.add(predictedLabel)
   const goRecommend = document.createElement('button');
   goRecommend.classList.add('btn');
   goRecommend.classList.add('btn-primary');
@@ -59,20 +80,45 @@ function showEmojis(predictedLabel,pictureQuote)
   goRecommend.addEventListener('click',handleRecommendations);
 }
 
+function findQuotes()
+{
+  const predictedLabel = document.getElementById('chosenLabel').classList[0];
+  const quote = {
+    "Angry" :"Why so angry ? You need to calm down",
+    "Sad":"Please don't be sad :( . Smile",
+    "Happy":"Yayy, let's spread more happiness"
+  };
+  const pictureQuote = quote[predictedLabel];
+  if(pictureQuote.length>0)
+  {
+    showEmojis(predictedLabel,pictureQuote);
+  }
+}
+
+function goToTheQuiz()
+{
+  const askQuiz = document.getElementById('askQuiz');
+  askQuiz.parentNode.removeChild(askQuiz);
+  const quiz = document.getElementById('quizControl');
+  quiz.classList.remove('dontshow');
+}
+
+function dontGoToTheQuiz()
+{
+  const askQuiz = document.getElementById('askQuiz');
+  askQuiz.parentNode.removeChild(askQuiz);
+  findQuotes();
+}
+
+
 function showPrediction(predictedLabel)
 {
     const app = document.getElementById('app');
     app.innerHTML = "";
-    const quote = {
-      "Angry" :"Why so angry ? You need to calm down",
-      "Sad":"Please don't be sad :( , Smile",
-      "Happy":"Yayy, let's spread more happiness"
-    };
-    const pictureQuote = quote[predictedLabel];
-    if(pictureQuote.length>0)
-    {
-      showEmojis(predictedLabel,pictureQuote);
-    }
+    const askQuiz = document.getElementById('askQuiz');
+    askQuiz.classList.remove('dontshow');
+    const chosenLabel = document.getElementById('chosenLabel');
+    chosenLabel.classList.add(predictedLabel);
 }
 
 function stopRec()
