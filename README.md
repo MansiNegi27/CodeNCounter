@@ -1,4 +1,3 @@
-# Code N Counter 4.O hackathon
 
 # Project:- Mood Buddy
 
